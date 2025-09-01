@@ -17,7 +17,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Sistema de controle de acesso com senha
@@ -37,7 +37,10 @@ arquivo_senhas = pasta_padrao + 'passwords.csv'
 # Variável global para o LCD
 myLcd = None
 
-####################### FUNCOES #########################
+##############################################
+# FUNCOES 
+##############################################
+
 
 
 def criptografa(senha):
