@@ -1,5 +1,6 @@
-import pytest
+# import pytest
 from add_user import avalia_senha
+
 
 def test_avalia_senha_trivial(monkeypatch, tmp_path):
     # Cria arquivo temporário de senhas ruins

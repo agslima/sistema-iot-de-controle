@@ -1,5 +1,6 @@
-import pytest
+# import pytest
 from bad_password import adiciona_senha_ruim
+
 
 def test_adiciona_senha_ruim(monkeypatch, tmp_path):
     # Cria arquivo temporário de senhas ruins
