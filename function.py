@@ -26,7 +26,7 @@
 import hashlib
 import csv
 from time import sleep
-from datetime import datetime
+# from datetime import datetime
 # import mraa
 # import pifacedigitalio
 # import pyupm_i2clcd as lcd
@@ -38,6 +38,7 @@ arquivo_senhas = pasta_padrao + 'passwords.csv'
 myLcd = None
 
 ####################### FUNCOES #########################
+
 
 def criptografa(senha):
     """Recebe uma senha e retorna o hash MD5"""
