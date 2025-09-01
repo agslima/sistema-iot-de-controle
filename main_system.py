@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Sistema IoT de controle de acesso com senha
@@ -20,12 +20,12 @@
 
 from function import *
 
-############# DEFINICOES ###########
+# DEFINICOES
 
 ERRO_LIMIT = 3  # Numero de tentativas permitidas antes de travar o sistema
 ERRO_TIME = 60  # Tempo inicial em que o sistema ficarah travado
 
-####################### MAIN ################################
+# MAIN
 
 print('Inicio do Sistema.')
 erro = 0

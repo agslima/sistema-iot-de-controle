@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Sistema de controle de acesso com senha
@@ -18,7 +18,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from function import criptografa, le_teclado  # ou outras funções usadas
+from function import criptografa # le_teclado ou outras funções usadas
 import csv
 
 
@@ -118,7 +118,7 @@ def remove_usuario():
         else:
             print('Nao encontrei essa pessoa!')
 
-######################### MAIN #######################
+# MAIN
 
 
 # Mantem o loop de interacao com o usuario para remover e adicionar

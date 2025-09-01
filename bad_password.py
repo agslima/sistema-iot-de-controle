@@ -48,7 +48,7 @@ def adiciona_senha_ruim():
             senhas.writerow([linha])
     print('Senha adicionada com sucesso!')
 
-########################### MAIN ########################
+# MAIN 
 
 
 loop = True
