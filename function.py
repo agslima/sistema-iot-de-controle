@@ -38,9 +38,8 @@ arquivo_senhas = pasta_padrao + 'passwords.csv'
 myLcd = None
 
 ##############################################
-# FUNCOES 
+# FUNCOES
 ##############################################
-
 
 
 def criptografa(senha):

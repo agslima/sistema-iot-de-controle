@@ -18,7 +18,9 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from function import *
+from function import criptografa, le_teclado  # ou outras funções usadas
+import csv
+
 
 pasta_padrao = ''  # Diretorio em que se encontra os scripts e dados do sistema
 senhas_ruins = pasta_padrao + 'bad_password.csv'
@@ -26,7 +28,7 @@ senhas_ruins = pasta_padrao + 'bad_password.csv'
 # portador da senha
 arquivo_senhas = pasta_padrao + 'passwords.csv'
 
-########################## FUNCTIONS ################################
+# FUNCTIONS
 
 # Retorna se eh uma senha valida ou nao
 
