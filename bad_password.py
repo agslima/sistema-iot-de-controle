@@ -17,7 +17,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from function import *
+from function import criptografa
+import csv
 
 # '/etc/init.d/' #Diretorio em que se encontra os scripts e dados do sistema
 pasta_padrao = ''
@@ -47,6 +48,7 @@ def adiciona_senha_ruim():
         for linha in lista_senha:
             senhas.writerow([linha])
     print('Senha adicionada com sucesso!')
+
 
 # MAIN 
 

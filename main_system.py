@@ -18,12 +18,14 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from function import *
+from function import autentica, sleep  # e outras funções usadas
+import csv
+
 
 # DEFINICOES
 
-ERRO_LIMIT = 3  # Numero de tentativas permitidas antes de travar o sistema
-ERRO_TIME = 60  # Tempo inicial em que o sistema ficarah travado
+ERRO_LIMIT = 3  # Número de tentativas permitidas antes de travar o sistema
+ERRO_TIME = 60  # Tempo inicial em que o sistema ficará travado
 
 # MAIN
 
