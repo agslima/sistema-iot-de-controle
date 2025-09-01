@@ -50,7 +50,7 @@ def adiciona_senha_ruim():
     print('Senha adicionada com sucesso!')
 
 
-# MAIN 
+# MAIN
 
 
 loop = True

@@ -19,7 +19,7 @@
 #
 
 from function import autentica, sleep  # e outras funções usadas
-import csv
+# import csv
 
 
 # DEFINICOES
