@@ -119,6 +119,7 @@ def remove_usuario():
             print('Nao encontrei essa pessoa!')
 
 
+
 # MAIN
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
