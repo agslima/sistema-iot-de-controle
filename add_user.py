@@ -123,6 +123,7 @@ def remove_usuario():
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
 
+
 if __name__ == "__main__":
     loop = True
     while loop:
@@ -132,8 +133,8 @@ if __name__ == "__main__":
         print('Digite [3] para ver todos os nomes do Banco de Dados')
         print('Digite [4] para sair\n')
         
-        comando = input()  
-
+        comando = input()
+        
         if comando == '1':
             adiciona_usuario()
         elif comando == '2':
