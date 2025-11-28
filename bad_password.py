@@ -52,16 +52,16 @@ def adiciona_senha_ruim():
 
 # MAIN
 
-
-loop = True
-while loop:
-    print('Digite [1] para adicionar uma senha proibida')
-    print('Digite [2] para sair')
-    comando = input()  # raw_input()
-    if comando == '1':
-        adiciona_senha_ruim()
-    elif comando == '2':
-        loop = False
-    else:
-        print('Este nao eh um comando valido!')
-print('Obrigado e volte sempre!')
+if __name__ == "__main__":
+    loop = True
+    while loop:
+        print('Digite [1] para adicionar uma senha proibida')
+        print('Digite [2] para sair')
+        comando = input()  # raw_input()
+        if comando == '1':
+            adiciona_senha_ruim()
+        elif comando == '2':
+            loop = False
+        else:
+            print('Este nao eh um comando valido!')
+    print('Obrigado e volte sempre!')
