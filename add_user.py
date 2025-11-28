@@ -120,10 +120,8 @@ def remove_usuario():
 
 
 # MAIN
-
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
-
 if __name__ == "__main__":
     loop = True
     while loop:
