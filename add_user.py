@@ -126,28 +126,29 @@ def remove_usuario():
 if __name__ == "__main__":
     loop = True
     while loop:
+        # Everything here repeats until loop becomes False
         print('\nDigite [1] para adicionar um membro')
         print('Digite [2] para remover um membro')
         print('Digite [3] para ver todos os nomes do Banco de Dados')
         print('Digite [4] para sair\n')
+        
+        comando = input()  
 
-    comando = input()  # raw_input()
+        if comando == '1':
+            adiciona_usuario()
+        elif comando == '2':
+            remove_usuario()
+        elif comando == '3':
+            with open(arquivo_senhas, 'r') as arq:
+                arqCsv = csv.reader(arq)
+                print('\n----------Lista----------')
+                for linha in arqCsv:
+                    print(linha[0])
+                print('-------------------------')
 
-    if comando == '1':
-        adiciona_usuario()
-    elif comando == '2':
-        remove_usuario()
-    elif comando == '3':
-        with open(arquivo_senhas, 'r') as arq:
-            arqCsv = csv.reader(arq)
-            print('\n----------Lista----------')
-            for linha in arqCsv:
-                print(linha[0])
-            print('-------------------------')
-
-    elif comando == '4':
-        loop = False
-    else:
-        print('Este nao eh um comando valido')
+        elif comando == '4':
+            loop = False
+        else:
+            print('Este nao eh um comando valido')
 
 print('Obrigado e volte sempre!')
