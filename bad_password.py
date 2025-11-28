@@ -66,8 +66,8 @@ def adiciona_senha_ruim():
 
 # MAIN
 if __name__ == "__main__":
-    LOOP_PRINCIPAL = True
-    while LOOP_PRINCIPAL:
+    loop_principal = True
+    while loop_principal:
         print('\nDigite [1] para adicionar uma senha proibida')
         print('Digite [2] para sair\n')
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
         if comando == '1':
             adiciona_senha_ruim()
         elif comando == '2':
-            LOOP_PRINCIPAL = False
+            loop_principal = False
         else:
             print('Este nao eh um comando valido!')
 
