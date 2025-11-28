@@ -17,51 +17,67 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-from function import criptografa
-import csv
+"""
+Módulo responsável por gerenciar a lista de senhas proibidas (bad passwords).
+Permite adicionar novas senhas à lista negra.
+"""
 
-# '/etc/init.d/' #Diretorio em que se encontra os scripts e dados do sistema
-pasta_padrao = ''
-senhas_ruins = pasta_padrao + 'bad_password.csv'
+import csv
+from function import criptografa
+
+# Constantes globais
+PASTA_PADRAO = ''
+ARQUIVO_SENHAS_RUINS = PASTA_PADRAO + 'bad_password.csv'
 
 
 def adiciona_senha_ruim():
-    with open(senhas_ruins) as arq:
-        arqCsv = csv.reader(arq)
-        lista_senha = []
-        for linha in arqCsv:
-            lista_senha.append(linha[0])
-        print('Escreva no teclado numerico a senha que deseja proibir')
-        senha = input()  # le_teclado()
-        senha_criptografada = criptografa(senha)
+    """
+    Lê o arquivo de senhas ruins, solicita uma nova senha,
+    verifica duplicidade e salva o hash no arquivo.
+    """
+    # Lê as senhas existentes
+    with open(ARQUIVO_SENHAS_RUINS, 'r', encoding='utf-8') as arquivo:
+        leitor_csv = csv.reader(arquivo)
+        lista_hashes = []
+        for linha in leitor_csv:
+            if linha:  # Evita linhas vazias
+                lista_hashes.append(linha[0])
 
-        # Verifica se essa senha ja nao foi adicionada
-        for linha in senha:
-            if linha == senha_criptografada:
-                print('Essa senha ja foi adicionada!')
-                return
+    print('Escreva no teclado numerico a senha que deseja proibir')
+    senha_raw = input()
+    senha_criptografada = criptografa(senha_raw)
 
-        # Se ja nao foi adicionada, adiciona
-        lista_senha.append(senha_criptografada)
-    with open(senhas_ruins, 'w') as arq:
-        senhas = csv.writer(arq)
-        for linha in lista_senha:
-            senhas.writerow([linha])
+    # CORREÇÃO DO BUG LÓGICO: Verifica se o hash está na lista carregada
+    if senha_criptografada in lista_hashes:
+        print('Essa senha ja foi adicionada!')
+        return
+
+    # Se nao existe, adiciona na memória
+    lista_hashes.append(senha_criptografada)
+
+    # Salva tudo de volta no arquivo
+    with open(ARQUIVO_SENHAS_RUINS, 'w', encoding='utf-8') as arquivo:
+        escritor_csv = csv.writer(arquivo)
+        for hash_senha in lista_hashes:
+            escritor_csv.writerow([hash_senha])
+
     print('Senha adicionada com sucesso!')
 
 
 # MAIN
-
 if __name__ == "__main__":
-    loop = True
-    while loop:
-        print('Digite [1] para adicionar uma senha proibida')
-        print('Digite [2] para sair')
-        comando = input()  # raw_input()
+    LOOP_PRINCIPAL = True
+    while LOOP_PRINCIPAL:
+        print('\nDigite [1] para adicionar uma senha proibida')
+        print('Digite [2] para sair\n')
+
+        comando = input()
+
         if comando == '1':
             adiciona_senha_ruim()
         elif comando == '2':
-            loop = False
+            LOOP_PRINCIPAL = False
         else:
             print('Este nao eh um comando valido!')
+
     print('Obrigado e volte sempre!')
