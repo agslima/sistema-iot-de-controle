@@ -123,10 +123,7 @@ def remove_usuario():
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
 
-
 if __name__ == "__main__":
-
-    
     loop = True
     while loop:
         # Everything here repeats until loop becomes False
@@ -154,4 +151,6 @@ if __name__ == "__main__":
         else:
             print('Este nao eh um comando valido')
 
-print('Obrigado e volte sempre!')
+    # Indent this so it only prints when the user actually quits the app, 
+    # not when the test imports the file.
+    print('Obrigado e volte sempre!')
