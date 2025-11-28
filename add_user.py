@@ -131,9 +131,9 @@ if __name__ == "__main__":
         print('Digite [2] para remover um membro')
         print('Digite [3] para ver todos os nomes do Banco de Dados')
         print('Digite [4] para sair\n')
-        
+
         comando = input()
-        
+
         if comando == '1':
             adiciona_usuario()
         elif comando == '2':
@@ -151,6 +151,6 @@ if __name__ == "__main__":
         else:
             print('Este nao eh um comando valido')
 
-    # Indent this so it only prints when the user actually quits the app, 
+    # Indent this so it only prints when the user actually quits the app,
     # not when the test imports the file.
     print('Obrigado e volte sempre!')
