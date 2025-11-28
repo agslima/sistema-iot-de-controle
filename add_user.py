@@ -120,15 +120,16 @@ def remove_usuario():
 
 # MAIN
 
-
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
-loop = True
-while loop:
-    print('\nDigite [1] para adicionar um membro')
-    print('Digite [2] para remover um membro')
-    print('Digite [3] para ver todos os nomes do Banco de Dados')
-    print('Digite [4] para sair\n')
+
+if __name__ == "__main__":
+    loop = True
+    while loop:
+        print('\nDigite [1] para adicionar um membro')
+        print('Digite [2] para remover um membro')
+        print('Digite [3] para ver todos os nomes do Banco de Dados')
+        print('Digite [4] para sair\n')
 
     comando = input()  # raw_input()
 
