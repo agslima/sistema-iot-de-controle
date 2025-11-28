@@ -8,7 +8,7 @@ def test_avalia_senha_trivial(monkeypatch, tmp_path):
     bad_file.write_text("1234\n5678\n")
 
     # monkeypatch do caminho do arquivo
-    monkeypatch.setattr("add_user.senhas_ruins", str(bad_file))
+    monkeypatch.setattr("add_user.ARQUIVO_SENHAS_RUINS", str(bad_file))
 
     pessoa = [["Bob", "abcd"]]
     # Senha que está no arquivo ruim
