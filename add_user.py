@@ -118,11 +118,11 @@ def remove_usuario():
         else:
             print('Nao encontrei essa pessoa!')
 
+
 # MAIN
 
 # Mantem o loop de interacao com o usuario para remover e adicionar
 # quantas pessaos forem necessarias
-
 
 if __name__ == "__main__":
     loop = True
