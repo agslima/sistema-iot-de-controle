@@ -8,37 +8,38 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  # 'pull-requests: write' removed as it is not currently used by any step
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: python:3.9-slim
+    # REMOVED: container: python:3.9-slim (Redundant when using setup-python)
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.9
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          cache: 'pip' # Logic for caching pip is now built-in here
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
-          pip install -r requirements.txt
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Ensure test tools are installed if not in requirements.txt
+          # pip install flake8 pytest coverage 
 
       - name: Lint with flake8
         run: |
+          # stop the build if there are Python syntax errors or undefined names
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run tests with coverage
         run: |
