@@ -9,6 +9,28 @@ A lightweight **User Entry/Exit Control System** developed for embedded Linux en
 
 ---
 
+## How to run this? 🚀
+
+**Clone the repository:**
+
+```bash
+git clone [https://github.com/agslima/Sistema-IoT-de-Controle.git](https://github.com/agslima/Sistema-IoT-de-Controle.git)
+cd Sistema-IoT-de-Controle
+```
+
+**Add a new user:**
+
+```bash
+python3 add_user.py
+```
+
+**Follow the on-screen prompts to set a username and secure password**
+
+```bash
+Run the main system:
+python3 main_system.py
+```
+
 ## 📋 Project Overview
 
 The primary goal of this system is to manage user authentication and access control in a physical environment. It simulates a secure gatekeeper system where:
@@ -46,33 +68,26 @@ john_doe,e99a18c428cb38d5f260853678922e03
 alice,5f4dcc3b5aa765d61d8327deb882cf99
 ```
 
-🛠️ Tech Stack & Dependencies
+## Tech Stack & Dependencies 🛠️
+
  * Hardware: Raspberry Pi (or Intel Edison/Galileo compatible boards)
  * Language: Python 3
  * Libraries:
    * hashlib (Standard Python lib for MD5)
    * csv (Standard Python lib for storage)
    * mraa (Low Level Skeleton Library for Communication on GNU/Linux platforms)
-References & Documentation
-This project relies on libmraa for GPIO communication (reading sensors/controlling actuators).
- * Intel IoT DevKit – MRAA Build Documentation
- * SparkFun - Installing libmraa
-🚀 Usage
- * Clone the repository:
-   git clone [https://github.com/agslima/Sistema-IoT-de-Controle.git](https://github.com/agslima/Sistema-IoT-de-Controle.git)
-cd Sistema-IoT-de-Controle
 
- * Add a new user:
-   python3 add_user.py
-# Follow the on-screen prompts to set a username and secure password
-
- * Run the main system:
-   python3 main_system.py
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+> [!NOTE]
+> **References & Documentation**
+> This project relies on libmraa for GPIO communication (reading sensors/controlling actuators).
+> * Intel IoT DevKit – MRAA Build Documentation
+> * SparkFun - Installing libmraa
 
 ---
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 
 <!--
