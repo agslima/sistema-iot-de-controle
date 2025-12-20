@@ -2,11 +2,20 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi-C51A4A?style=flat-square&logo=raspberry-pi&logoColor=white)
-![Security](https://img.shields.io/badge/Security-MD5%20Hashing-critical?style=flat-square&logo=lock&logoColor=white)
 ![License](https://img.shields.io/github/license/agslima/Sistema-IoT-de-Controle?style=flat-square)
 
 A lightweight **User Entry/Exit Control System** developed for embedded Linux environments (specifically **Raspberry Pi**). This project demonstrates core IoT concepts, hardware interaction via GPIO, and basic cryptographic security practices.
 
+## TL;DR
+
+> A Python-based embedded access control system that:
+> * Authenticates users locally
+> * Controls physical access via GPIO
+> * Stores credentials in a lightweight CSV database
+> * Demonstrates hashing concepts and IoT hardware integration
+
+> [warning]
+> Educational project — not production-ready security.
 ---
 
 ## How to run this? 🚀
@@ -24,10 +33,13 @@ cd Sistema-IoT-de-Controle
 python3 add_user.py
 ```
 
-**Follow the on-screen prompts to set a username and secure password**
+Follow the prompts to define:
+* Username
+* Password (validated against a weak-password blacklist)
+
+**Run the main system:**
 
 ```bash
-Run the main system:
 python3 main_system.py
 ```
 
@@ -40,11 +52,12 @@ The primary goal of this system is to manage user authentication and access cont
 * User data is persisted locally in a **CSV database**.
 * Hardware interaction is handled via the **MRAA library**.
 
-> **Note:** This project focuses on the *implementation of logic and hardware integration*. While MD5 is used here for educational demonstration of hashing concepts, modern production environments should utilize stronger algorithms (e.g., SHA-256 or bcrypt).
+> [warning]
+> This project focuses on the *implementation of logic and hardware integration*. While MD5 is used here for educational demonstration of hashing concepts, modern production environments should utilize stronger algorithms (e.g., SHA-256 or bcrypt).
 
 ---
 
-## 📂 Project Structure
+## Project Structure 📂
 
 The codebase is modularized to separate core logic, user management, and security validation.
 
@@ -57,11 +70,12 @@ The codebase is modularized to separate core logic, user management, and securit
 
 ---
 
-## 💾 Data Storage
+## Data Storage 💾
 
 User credentials are stored in a local `.csv` file to ensure persistence without requiring a heavy SQL database engine.
 
 **Format Structure:**
+
 ```csv
 username,password_hash
 john_doe,e99a18c428cb38d5f260853678922e03
@@ -73,18 +87,28 @@ alice,5f4dcc3b5aa765d61d8327deb882cf99
  * Hardware: Raspberry Pi (or Intel Edison/Galileo compatible boards)
  * Language: Python 3
  * Libraries:
-   * hashlib (Standard Python lib for MD5)
-   * csv (Standard Python lib for storage)
-   * mraa (Low Level Skeleton Library for Communication on GNU/Linux platforms)
+   * `hashlib` (Standard Python lib for MD5)
+   * `csv` (Standard Python lib for storage)
+   * `mraa` (Low Level Skeleton Library for Communication on GNU/Linux platforms)
 
-> [!NOTE]
-> **References & Documentation**
-> This project relies on libmraa for GPIO communication (reading sensors/controlling actuators).
-> * [Intel IoT DevKit – MRAA Build Docs](https://github.com/intel-iot-devkit/mraa/blob/master/docs/building.md)
-> * [SparkFun - Instalação MRAA](https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison/all)
+## Limitations & Non-Goals 🚧
+
+This project intentionally does not include:
+
+* Network-based authentication
+* Remote management
+* Encryption at rest
+* Role-based access control
+* Audit or event logs
+
+## References & Documentation 📚
+
+This project relies on libmraa for GPIO communication (reading sensors/controlling actuators).
+* [Intel IoT DevKit – MRAA Build Docs](https://github.com/intel-iot-devkit/mraa/blob/master/docs/building.md)
+* [SparkFun - Instalação MRAA](https://learn.sparkfun.com/tutorials/installing-libmraa-on-ubilinux-for-edison/all)
 
 ---
 
 ## License
-This project is licensed under the GPLv3 License - see the LICENSE file for details.
-
+This project is licensed under the **GPLv3 License**.
+See the LICENSE file for details.
