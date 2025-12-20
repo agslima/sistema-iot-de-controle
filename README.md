@@ -6,7 +6,7 @@
 
 A lightweight **User Entry/Exit Control System** developed for embedded Linux environments (specifically **Raspberry Pi**). This project demonstrates core IoT concepts, hardware interaction via GPIO, and basic cryptographic security practices.
 
-## TL;DR
+## TL;DR 🧠
 
 > A Python-based embedded access control system that:
 > * Authenticates users locally
@@ -14,8 +14,9 @@ A lightweight **User Entry/Exit Control System** developed for embedded Linux en
 > * Stores credentials in a lightweight CSV database
 > * Demonstrates hashing concepts and IoT hardware integration
 
-> [warning]
+> [!WARNING]
 > Educational project — not production-ready security.
+
 ---
 
 ## How to run this? 🚀
@@ -43,7 +44,9 @@ Follow the prompts to define:
 python3 main_system.py
 ```
 
-## 📋 Project Overview
+---
+
+## Project Overview 🧩
 
 The primary goal of this system is to manage user authentication and access control in a physical environment. It simulates a secure gatekeeper system where:
 
@@ -52,7 +55,7 @@ The primary goal of this system is to manage user authentication and access cont
 * User data is persisted locally in a **CSV database**.
 * Hardware interaction is handled via the **MRAA library**.
 
-> [warning]
+> [!WARNING]
 > This project focuses on the *implementation of logic and hardware integration*. While MD5 is used here for educational demonstration of hashing concepts, modern production environments should utilize stronger algorithms (e.g., SHA-256 or bcrypt).
 
 ---
@@ -82,6 +85,8 @@ john_doe,e99a18c428cb38d5f260853678922e03
 alice,5f4dcc3b5aa765d61d8327deb882cf99
 ```
 
+---
+
 ## Tech Stack & Dependencies 🛠️
 
  * Hardware: Raspberry Pi (or Intel Edison/Galileo compatible boards)
@@ -90,6 +95,8 @@ alice,5f4dcc3b5aa765d61d8327deb882cf99
    * `hashlib` (Standard Python lib for MD5)
    * `csv` (Standard Python lib for storage)
    * `mraa` (Low Level Skeleton Library for Communication on GNU/Linux platforms)
+
+---
 
 ## Limitations & Non-Goals 🚧
 
@@ -100,6 +107,8 @@ This project intentionally does not include:
 * Encryption at rest
 * Role-based access control
 * Audit or event logs
+
+---
 
 ## References & Documentation 📚
 
