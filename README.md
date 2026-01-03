@@ -14,9 +14,6 @@ A lightweight **User Entry/Exit Control System** developed for embedded Linux en
 > * Stores credentials in a lightweight CSV database
 > * Demonstrates hashing concepts and IoT hardware integration
 
-> [!WARNING]
-> Educational project — not production-ready security.
-
 ---
 
 ## How to run this? 🚀
@@ -56,7 +53,7 @@ The primary goal of this system is to manage user authentication and access cont
 * Hardware interaction is handled via the **MRAA library**.
 
 > [!WARNING]
-> This project focuses on the *implementation of logic and hardware integration*. While MD5 is used here for educational demonstration of hashing concepts, modern production environments should utilize stronger algorithms (e.g., SHA-256 or bcrypt).
+> This project focuses on the *implementation of logic and hardware integration*. While MD5 is used here for demonstration of hashing concepts, modern application should utilize stronger algorithms (e.g., SHA-256 or bcrypt).
 
 ---
 
