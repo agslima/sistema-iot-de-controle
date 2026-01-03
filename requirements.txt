@@ -1,7 +1,7 @@
 # Build dependencies
 Flask==2.2.5
 Flask-SQLAlchemy==2.5.1
-psycopg2-binary==2.9.3
+psycopg2-binary==2.9.11
 python-dotenv==0.20.0
 Flask-Talisman>=1.0.0
 Flask-Cors==6.0.0
