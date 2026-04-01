@@ -24,7 +24,7 @@ pinocchio==0.4.3
 factory-boy==3.3.3
 
 # Code Coverage
-coverage==7.13.1
+coverage==7.13.5
 
 setuptools>=78.1.1 # not directly required, pinned by Snyk to avoid a vulnerability
 werkzeug>=2.3.8 # not directly required, pinned by Snyk to avoid a vulnerability
