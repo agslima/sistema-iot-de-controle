@@ -4,7 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
     labels:
+      - "ci"
       - "dependencies"
 
     
@@ -12,6 +20,13 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    groups:
+      pip-update:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "fix"
+      include: "scope"
     labels:
       - "python"
 
